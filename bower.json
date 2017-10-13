@@ -1,0 +1,18 @@
+{
+  "name": "refactored-happiness",
+  "description": "frontend dependencies",
+  "main": "app.js",
+  "authors": [
+    "piorot"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "https://github.com/piorot/refactored-happiness",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.4.0",
+    "angular-material": "^1.1.0"
+  }
+}
