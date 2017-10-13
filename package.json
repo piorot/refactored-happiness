@@ -1,0 +1,26 @@
+{
+  "name": "refactored-happiness",
+  "version": "1.0.0",
+  "description": "Happiness refactoring in progress",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piorot/refactored-happiness.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "piorot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piorot/refactored-happiness/issues"
+  },
+  "homepage": "https://github.com/piorot/refactored-happiness#readme",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-material": "^1.1.5"
+  }
+}
