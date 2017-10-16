@@ -10,7 +10,7 @@
 
 
     <md-toolbar ng-controller="ToolbarController as toolbarCtrl">
-        <div class="md-toolbar-tools" >
+        <div class="md-toolbar-tools">
             <md-button class="md-icon-button" ng-click="toolbarCtrl.toggleMenu()" aria-label="Toggle menu visibility">
                 <md-icon md-svg-icon="img/icons/menu.svg" style="color: greenyellow;"></md-icon>
             </md-button>
@@ -23,7 +23,7 @@
     </md-toolbar>
 
 
-    <md-content flex >
+    <md-content flex>
         <div class="left-side-menu" ng-controller="MenuController as menu">
             <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-disable-backdrop md-component-id="menu">
                 <md-content role="navigation">
@@ -47,14 +47,16 @@
                                 <h3>Projects</h3>
                             </div>
                         </md-list-item>
-    
-    
+
+
                     </md-list>
-    
+
                 </md-content>
             </md-sidenav>
         </div>
-        
+        <ui-view></ui-view>
+
+
     </md-content>
 
     <script src="bower_components/angular/angular.js"></script>
