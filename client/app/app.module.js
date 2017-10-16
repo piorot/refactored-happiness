@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular
-        .module('app', ['ngMaterial', 'ui.router', 'toolbar'])
+        .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu'])
         .config(['$logProvider', '$stateProvider', '$locationProvider', function($logProvider, $stateProvider, $locationProvider){
             //$logProvider,debugEnabled(true);
 
