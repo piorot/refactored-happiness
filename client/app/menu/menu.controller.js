@@ -6,6 +6,8 @@
 
     function MenuController($mdSidenav, $mdMedia, $mdComponentRegistry) {
         var vm = this;
+        vm.shouldBeLockedOpen = true; 
+        // vm.shouldBeLockedOpen = shouldBeLockedOpen()
         activate();
         
         
@@ -15,7 +17,7 @@
             console.log('activate of menu controller');
 
             $mdComponentRegistry.when('menu').then(function () {
-                setInitialMenuState();
+                //setInitialMenuState();
             })
         }
 
@@ -24,6 +26,10 @@
                 console.log("this screen is greater than xs");
                 $mdSidenav("menu").open();
             }
+        }
+
+        function shouldBeLockedOpen(){
+            return true;
         }
 
 
