@@ -1,0 +1,4 @@
+1. investigate constants
+2. inject dependencis with minification resistant injector
+3. reference minified versions on js and css in index html or go into shrinkwrap
+4. use $log instead of console.log
