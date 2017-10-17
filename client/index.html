@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/list.css">
 
 </head>
 
@@ -23,24 +24,24 @@
     </md-toolbar>
 
 
-    <section layout="row" flex>
+    <div layout="row" flex>
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="menu">
             <md-content role="navigation" ng-controller="MenuController as menu">
                 <md-list>
                     <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>
-                    <md-list-item class="md-2-line" ng-click="$state.go('ddd')"> 
+                    <md-list-item class="md-2-line" ng-click="menu.changeState('people')">
                         <md-icon md-svg-icon="img/icons/person.svg"></md-icon>
                         <div class="md-list-item-text" layout="column">
                             <h3>People</h3>
                         </div>
                     </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="null">
+                    <md-list-item class="md-2-line" ng-click="menu.changeState('teams')">
                         <md-icon md-svg-icon="img/icons/team.svg"></md-icon>
                         <div class="md-list-item-text" layout="column">
                             <h3>Teams</h3>
                         </div>
                     </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="null">
+                    <md-list-item class="md-2-line" ng-click="menu.changeState('projects')">
                         <md-icon md-svg-icon="img/icons/work.svg"></md-icon>
                         <div class="md-list-item-text" layout="column">
                             <h3>Projects</h3>
@@ -52,27 +53,31 @@
 
             </md-content>
         </md-sidenav>
-
-       
-
-
+        <md-content layout="column" flex>
+            <ui-view></ui-view>
         </md-content>
 
-        <ui-view></ui-view>
+    </div>
 
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-aria/angular-aria.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-material/angular-material.js"></script>
-        <script src="bower_components/angular-messages/angular-messages.js"></script>
-        <script src="bower_components/angular-messages/angular-messages.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <!-- custom js -->
-        <script src="app/app.module.js"></script>
-        <script src="app/menu/menu.module.js"></script>
-        <script src="app/toolbar/toolbar.module.js"></script>
-        <script src="app/menu/menu.controller.js"></script>
-        <script src="app/toolbar/toolbar.controller.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- custom js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/menu/menu.module.js"></script>
+    <script src="app/toolbar/toolbar.module.js"></script>
+    <script src="app/people/people.module.js"></script>
+    <script src="app/projects/projects.module.js"></script>
+    <script src="app/teams/teams.module.js"></script>
+    <script src="app/menu/menu.controller.js"></script>
+    <script src="app/toolbar/toolbar.controller.js"></script>
+    <script src="app/people/people.controller.js"></script>
+    <script src="app/projects/projects.controller.js"></script>
+    <script src="app/teams/teams.controller.js"></script>
 </body>
 
 

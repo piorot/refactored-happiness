@@ -4,16 +4,12 @@
         .module("menu")
         .controller("MenuController", MenuController);
 
-    function MenuController() {
+    function MenuController($state) {
         var vm = this;
+        vm.changeState = changeState;
               
-        activate();
-        
-        
-        //ToDo : ensure md-component-id "menu" and size "gt-xs" are module specific constants
-
-        function activate() {
-           
+        function changeState(targetState){
+            $state.go(targetState);
         }
 
         
