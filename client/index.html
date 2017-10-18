@@ -4,19 +4,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 
 </head>
 
 <body ng-app="app" ng-cloak layout="column">
 
 
-    <md-toolbar ng-controller="ToolbarController as toolbarCtrl">
+    <md-toolbar ng-controller="ToolbarController as toolbarCtrl" class="md-primary">
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" ng-click="toolbarCtrl.toggleMenu()" aria-label="Toggle menu visibility" hide-gt-sm>
                 <md-icon md-svg-icon="img/icons/menu.svg" style="color: greenyellow;"></md-icon>
             </md-button>
             <h2>
-                <span>Management panel</span>
+                <span>Stuff managment panel</span>
             </h2>
             <span flex></span>
 
@@ -28,7 +29,7 @@
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="menu">
             <md-content role="navigation" ng-controller="MenuController as menu">
                 <md-list>
-                    <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>
+                    <md-subheader class="md-no-sticky">NAVIGATION</md-subheader>
                     <md-list-item class="md-2-line" ng-click="menu.changeState('people')">
                         <md-icon md-svg-icon="img/icons/person.svg"></md-icon>
                         <div class="md-list-item-text" layout="column">
@@ -58,6 +59,8 @@
         </md-content>
 
     </div>
+
+    
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
