@@ -3,18 +3,16 @@
         .module("toolbar")
         .controller("ToolbarController", ToolbarController);
 
-    function ToolbarController($scope, $timeout, $mdSidenav) {
+    ToolbarController.$inject = ['$mdSidenav'];
+
+    function ToolbarController($mdSidenav) {
         var vm = this;
         vm.toggleMenu = toggleMenu;
 
-        activate();
+       
 
         function toggleMenu() {
             $mdSidenav("menu").toggle();
-        }
-
-        function activate() {
-
         }
     }
 
