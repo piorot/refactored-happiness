@@ -4,15 +4,13 @@
         .module("menu")
         .controller("MenuController", MenuController);
 
-    function MenuController($state) {
+        function MenuController($state) {
         var vm = this;
         vm.changeState = changeState;
               
         function changeState(targetState){
-            $state.go(targetState);
-        }
-
-        
+            $state.go(targetState)
+        }       
 
     }
 })();
