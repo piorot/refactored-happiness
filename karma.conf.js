@@ -38,14 +38,26 @@ module.exports = function(config) {
         'karma-jasmine',
         'karma-junit-reporter', 
         require('karma-mocha'),
-        require('karma-sinon-chai')
+        require('karma-sinon-chai'),
+        require('karma-coverage')
        
       ],
   
       junitReporter: {
         outputFile: 'test_out/unit.xml',
         suite: 'unit'
-      }
+      },
+
+      reporters: ['progress', 'coverage'],
+      preprocessors: {
+       
+        'app/people/people.controller.js': ['coverage']
+      },
+      // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    }
   
     });
   };
