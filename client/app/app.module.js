@@ -2,6 +2,7 @@
     "use strict";
     angular
         .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu', 'people', 'projects', 'teams'])
+        .constant('baseBackendUrl','http://localhost:2403')
         .config(['$logProvider', '$stateProvider', '$locationProvider', function ($logProvider, $stateProvider, $locationProvider) {
             //$logProvider,debugEnabled(true);
 
@@ -32,5 +33,6 @@
             $locationProvider.hashPrefix('');
 
         }])
+        
         
 })();
