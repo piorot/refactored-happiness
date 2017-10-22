@@ -3,7 +3,7 @@
     angular.module("people")
         .factory("peopleService",peopleService);
         
-        peopleService.inject('$http', 'baseBackendUrl');
+        peopleService.$inject = ['$http', 'baseBackendUrl'];
 
         function peopleService($http, baseBackendUrl) {
             return {
