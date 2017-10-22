@@ -3,14 +3,21 @@
         .module("people")
         .controller('PeopleController', PeopleController)
 
-    function PeopleController(peopleService) {
+    PeopleController.$inject = ['peopleService', 'peopleListResolverService', '$scope'];
 
+    function PeopleController(peopleService, peopleListResolverService, $scope) {
+        var vm = this;
+        vm.list;
+        vm.activate = activate;
         activate();
-        
+
         function activate() {
             return peopleService.getPeopleList()
-                .then(function (response) {
-                    console.log(response);
+                .then(function (peopleList) {
+                    vm.list = peopleList;
+                    return peopleListResolverService.resolve(peopleList)
+                })
+                .then(function (resolvedPeopleList) {
                 })
         }
 

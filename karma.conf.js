@@ -19,6 +19,7 @@ module.exports = function(config) {
         'app/people/people.module.js',
         'app/people/people.controller.js',
         'app/people/people.service.js',
+        'app/people/people-list-resolver.service.js',
         'app/projects/projects.module.js',
         'app/teams/teams.module.js',
         'app/**/*.js',
