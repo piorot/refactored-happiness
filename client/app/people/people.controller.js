@@ -8,7 +8,6 @@
     function PeopleController(peopleService, peopleListResolverService, $scope) {
         var vm = this;
         vm.list;
-        vm.activate = activate;
         activate();
 
         function activate() {

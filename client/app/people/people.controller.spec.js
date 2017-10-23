@@ -1,6 +1,7 @@
 'use strict';
 
 describe('People Controller', function () {
+    var $q;
     var $scope;
     var sandbox;
     var $rootScope;
@@ -14,13 +15,14 @@ describe('People Controller', function () {
     beforeEach(module('ui.router'));
     beforeEach(module('people'));
     beforeEach(module('app'));
-    beforeEach(inject(function (_$controller_, _peopleService_, _baseBackendUrl_, _peopleListResolverService_, _$rootScope_) {
+    beforeEach(inject(function (_$controller_, _peopleService_, _baseBackendUrl_, _peopleListResolverService_, _$rootScope_, _$q_) {
         $controller = _$controller_;
         peopleService = _peopleService_;
         baseBackendUrl = _baseBackendUrl_;
         peopleListResolverService = _peopleListResolverService_;
         $scope = _$rootScope_.$new();
         $rootScope = _$rootScope_;
+        $q = _$q_;
     }));
 
     it("on load should download peopleList", function () {
@@ -37,15 +39,12 @@ describe('People Controller', function () {
 
     it("on load should resolve peopleList ", function () {
         sandbox = sinon.sandbox.create();
-        var getPeopleList = sandbox.stub(peopleService, "getPeopleList").resolves();
+        var getPeopleList = sandbox.stub(peopleService, "getPeopleList").returns($q.when());
         var resolvePeopleList = sandbox.stub(peopleListResolverService, "resolve").returns({ "manager": [] });
 
         var PeopleController = $controller('PeopleController', { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleListResolverService, $scope: $scope, $rootScope: $rootScope });
-
-        PeopleController.activate()
-            .then(function () {
-                expect(resolvePeopleList).to.have.been.called
-            })
+        $scope.$apply();
+        expect(resolvePeopleList).to.have.been.called;
 
 
 
