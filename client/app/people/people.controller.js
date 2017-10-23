@@ -8,6 +8,8 @@
     function PeopleController(peopleService, peopleListResolverService, $scope) {
         var vm = this;
         vm.list;
+        vm.roles;
+        vm.resolvedPeopleList
         activate();
 
         function activate() {
@@ -17,6 +19,9 @@
                     return peopleListResolverService.resolve(peopleList)
                 })
                 .then(function (resolvedPeopleList) {
+                    vm.resolvedPeopleList = resolvedPeopleList;
+                    vm.roles = Object.keys(resolvedPeopleList);
+
                 })
         }
 
