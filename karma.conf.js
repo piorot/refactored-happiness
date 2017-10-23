@@ -51,7 +51,8 @@ module.exports = function (config) {
     reporters: ['progress', 'coverage'],
     preprocessors: {
 
-      'app/people/people.controller.js': ['coverage']
+      'app/**/!(*.spec).js': ['coverage']
+      
     },
     // optionally, configure the reporter
     coverageReporter: {
