@@ -3,13 +3,14 @@
         .module("people")
         .controller('PeopleListController', PeopleListController)
 
-        PeopleListController.$inject = ['peopleService', 'peopleListResolverService', '$scope'];
+        PeopleListController.$inject = ['peopleService', 'peopleListResolverService', '$scope', '$state'];
 
-    function PeopleListController(peopleService, peopleListResolverService, $scope) {
+    function PeopleListController(peopleService, peopleListResolverService, $scope, $state) {
         var vm = this;
         vm.list;
         vm.roles;
         vm.resolvedPeopleList
+        vm.goToPerson = goToPerson;
         activate();
 
         function activate() {
@@ -23,6 +24,11 @@
                     vm.roles = Object.keys(resolvedPeopleList);
 
                 })
+        }
+
+
+        function goToPerson(person){
+            $state.go("peopleDetails", {id : person.id, person : person})
         }
 
 
