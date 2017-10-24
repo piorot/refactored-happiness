@@ -1,11 +1,11 @@
 (function () {
     angular
         .module("people")
-        .controller('PeopleController', PeopleController)
+        .controller('PeopleListController', PeopleListController)
 
-    PeopleController.$inject = ['peopleService', 'peopleListResolverService', '$scope'];
+        PeopleListController.$inject = ['peopleService', 'peopleListResolverService', '$scope'];
 
-    function PeopleController(peopleService, peopleListResolverService, $scope) {
+    function PeopleListController(peopleService, peopleListResolverService, $scope) {
         var vm = this;
         vm.list;
         vm.roles;

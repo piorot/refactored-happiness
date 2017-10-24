@@ -1,6 +1,6 @@
 'use strict';
 
-describe('People Controller', function () {
+describe('PeopleListController', function () {
     var $q;
     var $scope;
     var sandbox;
@@ -29,7 +29,7 @@ describe('People Controller', function () {
         sandbox = sinon.sandbox.create();
         var getPeopleList = sandbox.stub(peopleService, "getPeopleList").resolves({ data: [] });
 
-        var PeopleController = $controller('PeopleController', { peopleService: peopleService, baseBackendUrl: baseBackendUrl, $scope: $scope });
+        var PeopleListController= $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, $scope: $scope });
 
         expect(getPeopleList).to.have.been.calledOnce;
         expect(getPeopleList).to.have.been.calledWith();
@@ -42,7 +42,7 @@ describe('People Controller', function () {
         var getPeopleList = sandbox.stub(peopleService, "getPeopleList").returns($q.when());
         var resolvePeopleList = sandbox.stub(peopleListResolverService, "resolve").returns({ "manager": [] });
 
-        var PeopleController = $controller('PeopleController', { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleListResolverService, $scope: $scope, $rootScope: $rootScope });
+        var PeopleListController = $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleListResolverService, $scope: $scope, $rootScope: $rootScope });
         $scope.$apply();
         expect(resolvePeopleList).to.have.been.called;
 
