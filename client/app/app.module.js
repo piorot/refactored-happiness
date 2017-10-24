@@ -15,7 +15,7 @@
                     url: '/people',
                     templateUrl: '/app/people/people.template.html',
                     controller: 'PeopleListController',
-                    controllerAs: 'people'
+                    controllerAs: 'peopleList'
                 })
                 .state('teams', {
                     url: '/teams',
