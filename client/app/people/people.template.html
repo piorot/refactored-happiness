@@ -10,7 +10,7 @@
            <span ng-repeat="(key, value) in people.resolvedPeopleList">
                 <md-subheader>{{key}}</md-subheader>
                 <md-list-item ng-repeat="person in value" ng-click="goToPerson(person.name, $event)" class="noright">
-                    <img alt="Person name" src="../../img/test-avatars/100-2.jpeg" class="md-avatar" />
+                    <img alt="Person name" src="'../../img/{{person.avatar}}" class="md-avatar" />
                     <p>{{person.firstname}} {{person.lastname}}</p>
                     <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
                 </md-list-item>    
