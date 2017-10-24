@@ -13,7 +13,7 @@
                 })
                 .state('people', {
                     url: '/people',
-                    templateUrl: '/app/people/people.template.html',
+                    templateUrl: '/app/people/people-list.template.html',
                     controller: 'PeopleListController',
                     controllerAs: 'peopleList'
                 })
