@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/piorot/refactored-happiness#readme",
   "dependencies": {
-    "bower": "^1.8.2"
+    "bower": "^1.8.2",
+    "http-server": "^0.10.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.4.7",
-    "bower": "^1.8.2",
     "coveralls": "^3.0.0",
     "http-server": "^0.10.0",
     "jasmine-core": "^2.4.1",
