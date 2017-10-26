@@ -5,7 +5,7 @@
 
     function avatar() {
         return function (person) {
-            return person.avatar ? "../../img/" + person.avatar : "../../img/test-avatars/default-avatar.png"
+            return person.avatar ? "./img/" + person.avatar : "./img/test-avatars/default-avatar.png"
         }
     }
 })();
