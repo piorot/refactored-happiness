@@ -1,23 +1,20 @@
 sudo: required
 dist: trusty
-
 language: node_js
 node_js:
-  - '4.5'
-
+- '4.5'
 install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key
+  add -
 before_script:
-  - npm install
-  - npm install -g dpd
-
+- npm install
+- npm install -g dpd
 script:
-  - npm run test-single-run
-
+- npm run test-single-run
 after_success:
 - npm run coveralls
-  
+deploy:
+  api_key:
+    secure: WKNTe1QMpnZKUVeALEcL70olT8H0rtTr46vq8aiBmngIRymoAAiIcv1e83MqlKJUhiI1dmEWMhbXfiwruRmHkU6EXoD/1sW8CVgCnDsHzdKB9GMhJwaU9+WKLcIS25fvLvuuCQd2Y7tLmtxle6z/C8dTZuxq2ytfwKMXWOpGByJZ5k4E+ImHLYPKePEW8E1tZ1N3JtHE5piBETUvzsvUarVPih3/hjk0xTYLpJETaEnNAsg08DJ3bTD1p+PnAbtble9tzrkRnjNK/r+DAUyT256rbI6k+iDnpdbXDTZCkhpviRnbGWPlDz9HUIUlpu7wTtjaPariz1jGKZLb5Ni8mcsb9l0rYpepcgPmhhPKb9Odqgcf0QbjCp69kVdNQ3xNw/i6CQPkHB6QRi3zKWHccKjoGPH5vFRvySpV30N2yLKkIqCpxz71+pjgBF4hs6U1Qbz9VSA9PRGvXJ8XWjds3XNRLrPTPgmUvkAWl2JaJdIDkaYSY4uWcHFeuYQxKdvnoo/3Wafq3OYOS7bFvFm2rLXhd/YjAsDyoC/S+0S+q8O3bAAMif8CNIXtV/wioWajoyQHL/CylRwhOks3bkTh3v6efBrGPsw2kNRlpH6NF4w4ZzFVcNz6U56NjTKdaX0NaLrBj40ISABOtYRPHMbn0zRnX1RHzoMJem7eY05+a9Q=
