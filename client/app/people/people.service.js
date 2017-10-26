@@ -13,6 +13,13 @@
                             return response.data;
                         })
                        
+                },
+
+                getEmployeeDetails : function getEmployeeDetails(id){
+                    return $http.get(baseBackendUrl + "/people/" +id)
+                    .then(function (response) {
+                        return response.data;
+                    })
                 }
             }
 

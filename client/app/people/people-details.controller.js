@@ -11,8 +11,10 @@
 
         function activate() {
 
-            console.log($stateParams);
-          
+            peopleService.getEmployeeDetails($stateParams.id)
+                .then(function (personDetails) {
+                    vm.person = personDetails;
+                })
         }
 
 

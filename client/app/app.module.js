@@ -22,9 +22,7 @@
                     templateUrl: '/app/people/people-details.template.html',
                     controller: 'PeopleDetailsController',
                     controllerAs: 'peopleDetails',
-                    params : {
-                        'person' : null
-                    }
+                    
                     
                 })
                 .state('teams', {

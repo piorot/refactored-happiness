@@ -28,7 +28,7 @@
 
 
         function goToPerson(person){
-            $state.go("peopleDetails", {id : person.id, person : person})
+            $state.go("peopleDetails", {id : person.id})
         }
 
 
