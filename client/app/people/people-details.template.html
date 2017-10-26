@@ -2,13 +2,14 @@
     <md-card style="margin : 30px">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Card with image</span>
+                <span class="md-headline">{{peopleDetails.person | fullusername}}</span>
                 <span class="md-subhead">Large</span>
             </md-card-title-text>
             <md-card-title-media>
-                <div class="md-media-lg card-media"><img alt="Person name" src="'../../img/{{person.avatar}}" class="md-avatar" /></div>
+                <div class="md-media-lg card-media"><img alt="Person avatar" ng-src="{{peopleDetails.person | avatar}}" class="md-avatar" /></div>
             </md-card-title-media>
         </md-card-title>
+        <md-divider></md-divider>
         <md-card-actions layout="row" layout-align="end center">
             <md-button>Action 1</md-button>
             <md-button>Action 2</md-button>
@@ -16,3 +17,4 @@
     </md-card>
 
 </section>
+
