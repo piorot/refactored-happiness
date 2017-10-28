@@ -11,7 +11,7 @@ var server = deployd({
     name: 'heroku_p4nmksq9',
     credentials: {
       username: 'piorot',
-      password: 'process.env.MONGODB_PASSWD'
+      password: process.env.MONGODB_PASSWD
     }
   }
 });
