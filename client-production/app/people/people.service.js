@@ -6,7 +6,7 @@
         peopleService.$inject = ['$http', 'baseBackendUrl', '$location'];
 
         function peopleService($http, baseBackendUrl, $location) {
-            var baseUrl = 'http://' + $location.$$host + ':' + $location.$$port 
+            var baseUrl = 'https://' + $location.$$host + ':' + $location.$$port 
             return {
                 getPeopleList: function getPeopleList() {
                     return $http.get(baseUrl + "/people")
