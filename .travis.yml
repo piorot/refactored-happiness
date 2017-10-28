@@ -23,5 +23,4 @@ deploy:
   on:
     repo: piorot/refactored-happiness
   run: 
-    - "npm install -g http-server"
-    - "npm start"
+    
