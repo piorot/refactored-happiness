@@ -1,5 +1,7 @@
 node_modules
-client/bower_components
-client/coverage
 npm-debug.log
 client/img/test-avatars/Thumbs.db
+client-production/coverage/
+client-production/bower-components/
+client-production/coverage/
+
