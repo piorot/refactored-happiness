@@ -7,7 +7,7 @@
     "postinstall": "bower install",
     "update-deps": "npm update",
     "postupdate-deps": "bower update",
-    "start": "node server",
+    "start": "http-server -a localhost -c-1 ./client",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run",
@@ -32,8 +32,6 @@
   "homepage": "https://github.com/piorot/refactored-happiness#readme",
   "dependencies": {
     "bower": "^1.8.2",
-    "deployd": "^1.0.0",
-    "grunt": "^1.0.1",
     "http-server": "^0.10.0"
   },
   "devDependencies": {
