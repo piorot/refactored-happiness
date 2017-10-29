@@ -6,10 +6,9 @@
         peopleService.$inject = ['$http', 'baseBackendUrl', '$location'];
 
         function peopleService($http, baseBackendUrl, $location) {
-            var baseUrl = 'https://' + $location.$$host + ':' + $location.$$port 
             return {
                 getPeopleList: function getPeopleList() {
-                    return $http.get(baseUrl + "/people")
+                    return $http.get(baseBackendUrl + "/people")
                         .then(function (response) {
                             return response.data;
                         })
@@ -17,7 +16,7 @@
                 },
 
                 getEmployeeDetails : function getEmployeeDetails(id){
-                    return $http.get(baseUrl + "/people/" +id)
+                    return $http.get(baseBackendUrl + "/people/" +id)
                     .then(function (response) {
                         return response.data;
                     })

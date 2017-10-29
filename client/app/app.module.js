@@ -2,7 +2,7 @@
     "use strict";
     angular
         .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu', 'people', 'projects', 'teams'])
-        .constant('baseBackendUrl', 'http://127.0.0.1:5000')
+        .constant('baseBackendUrl', 'http://127.0.0.1:2403')
         .config(['$logProvider', '$stateProvider', '$locationProvider', function ($logProvider, $stateProvider, $locationProvider) {
             //$logProvider,debugEnabled(true);
 

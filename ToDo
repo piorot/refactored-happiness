@@ -1,5 +1,6 @@
-1. investigate constants
-2. inject dependencis with minification resistant injector
-3. reference minified versions on js and css in index html or go into shrinkwrap
-4. use $log instead of console.log
-5. decide how to handle when no error comes from backend server
+*. inject dependencis with minification resistant injector
+*. reference minified versions on js and css in index html or go into shrinkwrap
+*. use $log instead of console.log
+*. decide how to handle when no error comes from backend server
+
+
