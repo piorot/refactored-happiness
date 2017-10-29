@@ -32,6 +32,14 @@
 			"required": false,
 			"id": "roles",
 			"order": 3
+		},
+		"Skillset": {
+			"name": "Skillset",
+			"type": "object",
+			"typeLabel": "object",
+			"required": false,
+			"id": "Skillset",
+			"order": 4
 		}
 	}
 }
