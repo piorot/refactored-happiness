@@ -33,9 +33,15 @@
                 })
                 .state('projects', {
                     url: '/projects',
-                    templateUrl: '/app/projects/projects.template.html',
-                    controller: 'ProjectsController',
-                    controllerAs: 'projects'
+                    templateUrl: '/app/projects/projects-list.template.html',
+                    controller: 'ProjectsListController',
+                    controllerAs: 'projectsList'
+                })
+                .state('projectsDetails', {
+                    url: '/projects/:id',
+                    templateUrl: '/app/projects/project-details.template.html',
+                    controller: 'ProjectDetailsController',
+                    controllerAs: 'projectDetails'
                 });
 
             $locationProvider.hashPrefix('');
