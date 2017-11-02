@@ -14,6 +14,17 @@
             peopleService.getEmployeeDetails($stateParams.id)
                 .then(function (personDetails) {
                     vm.person = personDetails;
+                    var roles = [];
+                    
+                    Object.keys(personDetails.roles).forEach(function(role){
+                        personDetails.roles[role].forEach(function(team){
+                            roles.push({team : team, role : role})
+                        })
+                    })
+                    delete vm.person.roles;
+                    vm.person.roles = roles;
+                    
+                    
                 })
         }
 
