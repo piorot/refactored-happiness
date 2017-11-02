@@ -21,7 +21,6 @@
         }
 
         function showProjectDetails(project){
-            console.log("showProjectDetails")
             $state.go("projectsDetails", {id : project.id})
         }
 

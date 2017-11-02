@@ -4,13 +4,15 @@
 
 
     function imageResolver() {
-        return function (object, imageProperty) {
+        return function (obj, imageProperty) {
+            if(!obj || ! imageProperty)            
+                return ""
             if (imageProperty === 'avatar')
-                return object.avatar ? "./img/" + object.avatar : "./img/test-avatars/default-avatar.png"
+                return obj.avatar ? "./img/" + obj.avatar : "./img/test-avatars/default-avatar.png"
             else if (imageProperty === 'splashScreen')
-                return object.splashScreen ? "./img/" + object.splashScreen : "./img/projects/splashes/default-splash.png"
+                return obj.splashScreen ? "./img/" + obj.splashScreen : "./img/projects/splashes/default-splash.png"
             else if (imageProperty === 'icon')
-                return object.icon ? "./img/" + object.icon : "./img/projects/icons/logo.svg"
+                return obj.icon ? "./img/" + obj.icon : "./img/projects/icons/logo.svg"
         }
     }
 })();

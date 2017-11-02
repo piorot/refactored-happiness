@@ -38,7 +38,7 @@
                     controllerAs: 'projectsList'
                 })
                 .state('projectsDetails', {
-                    url: '/projects/:id',
+                    url: '/project/:id',
                     templateUrl: '/app/projects/project-details.template.html',
                     controller: 'ProjectDetailsController',
                     controllerAs: 'projectDetails'
