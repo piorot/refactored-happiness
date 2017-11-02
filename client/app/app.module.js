@@ -3,6 +3,7 @@
     angular
         .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu', 'people', 'projects', 'teams'])
         .constant('baseBackendUrl', 'http://127.0.0.1:2403')
+        .constant('imgCatalog', 'img')
         .config(['$logProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($logProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/people')
             $stateProvider

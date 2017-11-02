@@ -5,3 +5,4 @@ client-production/coverage/
 client-production/bower-components/
 client-production/coverage/
 stuff-manager
+client/coverage
