@@ -3,14 +3,9 @@
     angular
         .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu', 'people', 'projects', 'teams'])
         .constant('baseBackendUrl', 'http://127.0.0.1:2403')
-        .config(['$logProvider', '$stateProvider', '$locationProvider', function ($logProvider, $stateProvider, $locationProvider) {
-            //$logProvider,debugEnabled(true);
-
+        .config(['$logProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($logProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('/people')
             $stateProvider
-                .state('home', {
-                    url: '/',
-                    template: '<h1>This is an inline template</h1>',
-                })
                 .state('peopleList', {
                     url: '/people',
                     templateUrl: '/app/people/people-list.template.html',
