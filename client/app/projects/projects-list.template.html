@@ -7,14 +7,14 @@
             <md-card>
                 <md-card-header>
                     <md-card-avatar>
-                        <img src="img/projects/icons/logo.svg" />
+                        <img ng-src="{{project | imageResolver: 'icon'}}" />
                     </md-card-avatar>
                     <md-card-header-text>
                         <span class="md-title">{{project.customerDetails.companyName}}</span>
                         <span hide show-gt-md class="md-subhead">{{project.customerDetails.address}}</span>
                     </md-card-header-text>
                 </md-card-header>
-                <img ng-src="./img/{{project.splashScreen}}" class="md-card-image" alt="Washed Out">
+                <img ng-src="{{project | imageResolver : 'splashScreen'}}" class="md-card-image" alt="{{project.name}}">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{project.name}}</span>
@@ -41,14 +41,14 @@
             <md-card>
                 <md-card-header>
                     <md-card-avatar>
-                        <img src="img/projects/icons/logo.svg" />
+                            <img ng-src="{{project | imageResolver: 'icon'}}" />
                     </md-card-avatar>
                     <md-card-header-text>
                         <span class="md-title">{{project.customerDetails.companyName}}</span>
                         <span hide show-gt-md class="md-subhead">{{project.customerDetails.address}}</span>
                     </md-card-header-text>
                 </md-card-header>
-                <img ng-src="./img/{{project.splashScreen}}" class="md-card-image" alt="Washed Out">
+                <img ng-src="{{project | imageResolver : 'splashScreen'}}" class="md-card-image" alt="{{project.name}}">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{project.name}}</span>

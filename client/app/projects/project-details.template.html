@@ -1,1 +1,94 @@
-hehe
+<section>
+        <md-card style="margin : 30px">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{projectDetails.project}}</span>
+                    <span class="md-subhead">Experienced Node.js developer, keen on learining new stuff</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media">
+                        <img alt="Person avatar" ng-src="{{projectDetails.splashScreen | splash}}" class="md-avatar" />
+                    </div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-content>
+                <md-divider></md-divider>
+    
+                <h5 class="md-headline">Skillset</h5>
+                <div layout="column" layout-gt-sm="row" layout-margin>
+    
+                    <div flex="50" layout="column" layout-margin>
+                        <span class="md-subhead">Tech skills</span>
+                        <md-slider-container layout="row" layout-margin>
+                            <span flex="10" class="md-body-1">JavaScript</span>
+                            <md-slider flex="60" ng-model="peopleDetails.person['Skillset']['JavaScript']" step="5" min="0" max="100" aria-label="rating"></md-slider>
+                            <md-input-container>
+                                <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+                        <md-slider-container layout="row" layout-margin>
+                            <span flex="10" class="md-body-1">JavaScript</span>
+                            <md-slider flex="60" ng-model="peopleDetails.person['Skillset']['JavaScript']" step="5" min="0" max="100" aria-label="rating"></md-slider>
+                            <md-input-container>
+                                <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+                        <md-slider-container layout="row" layout-margin>
+                            <span flex="10" class="md-body-1">JavaScript</span>
+                            <md-slider flex="60" ng-model="peopleDetails.person['Skillset']['JavaScript']" step="5" min="0" max="100" aria-label="rating"></md-slider>
+                            <md-input-container>
+                                <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+    
+                    </div>
+                    <div flex="50" layout="column" layout-margin>
+                        <span class="md-subhead">Soft skills</span>
+                        <md-slider-container layout="row" layout-margin>
+                            <span flex="10" class="md-body-1">JavaScript</span>
+                            <md-slider flex="60" ng-model="peopleDetails.person['Skillset']['JavaScript']" step="5" min="0" max="100" aria-label="rating"></md-slider>
+                            <md-input-container>
+                                <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+                        <md-slider-container layout="row" layout-margin>
+                            <span flex="10" class="md-body-1">JavaScript</span>
+                            <md-slider flex="60" ng-model="peopleDetails.person['Skillset']['JavaScript']" step="5" min="0" max="100" aria-label="rating"></md-slider>
+                            <md-input-container>
+                                <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+                        <md-slider-container layout="row" layout-margin>
+                            <span flex="10" class="md-body-1">JavaScript</span>
+                            <md-slider flex="60" ng-model="peopleDetails.person['Skillset']['JavaScript']" step="5" min="0" max="100" aria-label="rating"></md-slider>
+                            <md-input-container>
+                                <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <h5 class="md-headline">Teams & Roles</h5>
+    
+    
+                <md-chips ng-model="peopleDetails.person.roles" name="fruitName" readonly="true">
+                    <md-chip-template>
+                        <strong>{{$chip.team}}</strong>
+                        <em>({{$chip.role}})</em>
+                    </md-chip-template>
+                </md-chips>
+    
+    
+    
+    
+    
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+    
+    </section>
+    
+    </md-content>
