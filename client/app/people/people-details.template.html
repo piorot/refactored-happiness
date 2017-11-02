@@ -40,7 +40,6 @@
                             <input type="number" ng-model="peopleDetails.person['Skillset']['JavaScript']" aria-label="red" aria-controls="red-slider">
                         </md-input-container>
                     </md-slider-container>
-
                 </div>
                 <div flex="50" layout="column" layout-margin>
                     <span class="md-subhead">Soft skills</span>
@@ -69,24 +68,13 @@
             </div>
             <md-divider></md-divider>
             <h5 class="md-headline">Teams & Roles</h5>
-
-
             <md-chips ng-model="peopleDetails.person.roles" name="fruitName" readonly="true">
                 <md-chip-template>
                     <strong>{{$chip.team}}</strong>
                     <em>({{$chip.role}})</em>
                 </md-chip-template>
             </md-chips>
-
-
-
-
-
         </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-        </md-card-actions>
     </md-card>
 
 </section>
