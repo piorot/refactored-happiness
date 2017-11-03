@@ -38,7 +38,7 @@ describe('ProjectsListController', function () {
         expect(getProjectsList).to.have.been.calledWith();
     })
 
-    it("should change stateto projectsDetails when called showProjectDetails", function() {
+    it("should change state to projectsDetails when called showProjectDetails", function() {
         var ProjectsListController = $controller('ProjectsListController', { $state: $state });
         var dummyProjectMock = {id : 123};
         var sandbox = sinon.sandbox.create();

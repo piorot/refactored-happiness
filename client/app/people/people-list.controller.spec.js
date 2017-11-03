@@ -1,6 +1,6 @@
 'use strict';
 
-describe.only('PeopleListController', function () {
+describe('PeopleListController', function () {
     var $q;
     var $scope;
     var sandbox;
