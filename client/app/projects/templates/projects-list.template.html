@@ -1,7 +1,5 @@
 <section class="md-padding" layout-xs="column" layout="row">
 
-
-
     <div flex-gt-xs="50" layout="column">
         <div ng-repeat="project in projectsList.list" ng-if="$even">
             <md-card>
@@ -27,21 +25,18 @@
                 </md-card-content>
 
                 <md-card-actions layout="row" layout-align="end center">
-                        <md-button ng-click="projectsList.showProjectDetails(project)">Details</md-button>
+                    <md-button ng-click="projectsList.showProjectDetails(project)">Details</md-button>
                 </md-card-actions>
             </md-card>
         </div>
     </div>
-
-
-
     <div flex-gt-xs="50" layout="column">
         <div ng-repeat="project in projectsList.list" ng-if="$odd">
 
             <md-card>
                 <md-card-header>
                     <md-card-avatar>
-                            <img ng-src="{{project | imageResolver: 'icon'}}" />
+                        <img ng-src="{{project | imageResolver: 'icon'}}" />
                     </md-card-avatar>
                     <md-card-header-text>
                         <span class="md-title">{{project.customerDetails.companyName}}</span>
@@ -70,4 +65,5 @@
 
 
     </div>
+
 </section>
