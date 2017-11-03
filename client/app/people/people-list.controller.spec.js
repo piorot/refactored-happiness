@@ -8,7 +8,7 @@ describe('PeopleListController', function () {
     var $controller;
     var peopleService;
     var baseBackendUrl;
-    var peopleListResolverService;
+    var peopleResolverService;
 
 
 
@@ -16,11 +16,11 @@ describe('PeopleListController', function () {
     beforeEach(module('people'));
     beforeEach(module('app'));
     beforeEach(module('templates'));
-    beforeEach(inject(function (_$controller_, _peopleService_, _baseBackendUrl_, _peopleListResolverService_, _$rootScope_, _$q_) {
+    beforeEach(inject(function (_$controller_, _peopleService_, _baseBackendUrl_, _peopleResolverService_, _$rootScope_, _$q_) {
         $controller = _$controller_;
         peopleService = _peopleService_;
         baseBackendUrl = _baseBackendUrl_;
-        peopleListResolverService = _peopleListResolverService_;
+        peopleResolverService = _peopleResolverService_;
         $scope = _$rootScope_.$new();
         $rootScope = _$rootScope_;
         $q = _$q_;
@@ -41,9 +41,9 @@ describe('PeopleListController', function () {
     it("on load should resolve peopleList ", function () {
         sandbox = sinon.sandbox.create();
         var getPeopleList = sandbox.stub(peopleService, "getPeopleList").returns($q.when());
-        var resolvePeopleList = sandbox.stub(peopleListResolverService, "resolve").returns({ "manager": [] });
+        var resolvePeopleList = sandbox.stub(peopleResolverService, "resolveList").returns({ "manager": [] });
 
-        var PeopleListController = $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleListResolverService, $scope: $scope, $rootScope: $rootScope });
+        var PeopleListController = $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleResolverService, $scope: $scope, $rootScope: $rootScope });
         $scope.$apply();
         expect(resolvePeopleList).to.have.been.called;
 

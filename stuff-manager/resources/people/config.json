@@ -27,8 +27,8 @@
 		},
 		"roles": {
 			"name": "roles",
-			"type": "object",
-			"typeLabel": "object",
+			"type": "array",
+			"typeLabel": "array",
 			"required": false,
 			"id": "roles",
 			"order": 3

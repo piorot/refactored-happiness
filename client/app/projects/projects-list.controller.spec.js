@@ -9,7 +9,7 @@ describe('ProjectsListController', function () {
     var $controller;
     var projectsService;
     var baseBackendUrl;
-    var peopleListResolverService;
+    var peopleResolverService;
 
 
 
@@ -17,7 +17,7 @@ describe('ProjectsListController', function () {
     beforeEach(module('people'));
     beforeEach(module('app'));
     beforeEach(module('templates'));
-    beforeEach(inject(function (_$controller_, _projectsService_, _baseBackendUrl_, _peopleListResolverService_, _$rootScope_, _$q_, _$state_) {
+    beforeEach(inject(function (_$controller_, _projectsService_, _baseBackendUrl_, _peopleResolverService_, _$rootScope_, _$q_, _$state_) {
         $q = _$q_;
         $state = _$state_;
         $rootScope = _$rootScope_;
@@ -25,7 +25,7 @@ describe('ProjectsListController', function () {
         $scope = _$rootScope_.$new();
         baseBackendUrl = _baseBackendUrl_;
         projectsService = _projectsService_;
-        peopleListResolverService = _peopleListResolverService_;
+        peopleResolverService = _peopleResolverService_;
     }));
 
     it("on load should download projectsList", function () {

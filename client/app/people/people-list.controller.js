@@ -3,9 +3,9 @@
         .module("people")
         .controller('PeopleListController', PeopleListController)
 
-        PeopleListController.$inject = ['peopleService', 'peopleListResolverService', '$scope', '$state'];
+        PeopleListController.$inject = ['peopleService', 'peopleResolverService', '$scope', '$state'];
 
-    function PeopleListController(peopleService, peopleListResolverService, $scope, $state) {
+    function PeopleListController(peopleService, peopleResolverService, $scope, $state) {
         var vm = this;
         vm.list;
         vm.roles;
@@ -19,7 +19,7 @@
             return peopleService.getPeopleList()
                 .then(function (peopleList) {
                     vm.list = peopleList;
-                    return peopleListResolverService.resolve(peopleList)
+                    return peopleResolverService.resolveList(peopleList)
                 })
                 .then(function (resolvedPeopleList) {
                     vm.resolvedPeopleList = resolvedPeopleList;
