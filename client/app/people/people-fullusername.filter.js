@@ -4,7 +4,11 @@
 
 
     function fullusername() {
+
         return function (person) {
+            if (!person || !person.firstname || !person.lastname) {
+                return '';
+            }
             return `${person.firstname} ${person.lastname}`
         }
     }
