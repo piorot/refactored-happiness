@@ -10,14 +10,15 @@ describe('ProjectDetailsController', function () {
     beforeEach(module('people'));
     beforeEach(module('app'));
     beforeEach(module('templates'));
-    beforeEach(inject(function (_$controller_, _projectsService_) {
+    beforeEach(inject(function (_$controller_, _projectsService_, _$q_) {
         $controller = _$controller_;
         projectsService = _projectsService_;
+        $q = _$q_;
     }));
 
     it("on load should download projectDetails details", function () {
         sandbox = sinon.sandbox.create();
-        var getProjectDetails = sandbox.stub(projectsService, "getProjectDetails").resolves({ data: {} });
+        var getProjectDetails = sandbox.stub(projectsService, "getProjectDetails").returns($q.when({ data: {} }));
         var $fakeStateParams = {id : 1};
         var ProjectDetailsController = $controller("ProjectDetailsController", { projectsService: projectsService, $stateParams: $fakeStateParams });
 
