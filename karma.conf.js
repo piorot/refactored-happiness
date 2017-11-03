@@ -17,12 +17,10 @@ module.exports = function (config) {
       'app/menu/menu.module.js',
       'app/toolbar/toolbar.module.js',
       'app/people/people.module.js',
-      'app/people/people.controller.js',
-      'app/people/people.service.js',
-      'app/people/people-list-resolver.service.js',
       'app/projects/projects.module.js',
       'app/teams/teams.module.js',
       'app/**/*.js',
+      'app/*/*.js',
       'app/**/*.html',
 
     ],

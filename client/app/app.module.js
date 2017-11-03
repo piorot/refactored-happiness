@@ -9,13 +9,13 @@
             $stateProvider
                 .state('peopleList', {
                     url: '/people',
-                    templateUrl: '/app/people/people-list.template.html',
+                    templateUrl: '/app/people/templates/people-list.template.html',
                     controller: 'PeopleListController',
                     controllerAs: 'peopleList'
                 })
                 .state('peopleDetails', {
                     url: '/people/:id',
-                    templateUrl: '/app/people/people-details.template.html',
+                    templateUrl: '/app/people/templates/people-details.template.html',
                     controller: 'PeopleDetailsController',
                     controllerAs: 'peopleDetails',
                     
@@ -29,13 +29,13 @@
                 })
                 .state('projects', {
                     url: '/projects',
-                    templateUrl: '/app/projects/projects-list.template.html',
+                    templateUrl: '/app/projects/templates/projects-list.template.html',
                     controller: 'ProjectsListController',
                     controllerAs: 'projectsList'
                 })
                 .state('projectsDetails', {
                     url: '/project/:id',
-                    templateUrl: '/app/projects/project-details.template.html',
+                    templateUrl: '/app/projects/templates/project-details.template.html',
                     controller: 'ProjectDetailsController',
                     controllerAs: 'projectDetails'
                 });
