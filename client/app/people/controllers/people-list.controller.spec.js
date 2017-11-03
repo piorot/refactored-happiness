@@ -44,7 +44,7 @@ describe('PeopleListController', function () {
         var resolvePeopleList = sandbox.stub(peopleResolverService, "resolveList").returns({ "manager": [] });
 
         var PeopleListController = $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleResolverService, $scope: $scope, $rootScope: $rootScope });
-        $scope.$apply();
+        $scope.$digest();
         expect(resolvePeopleList).to.have.been.called;
 
 

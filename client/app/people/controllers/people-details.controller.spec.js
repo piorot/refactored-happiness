@@ -43,7 +43,7 @@ describe('PeopleDetailsController', function () {
         
         var resolveEmployeeRoles = sandbox.stub(peopleResolverService, "resolveEmployeeRoles").returns();
 
-        $scope.$apply();
+        $scope.$digest();
         expect(resolveEmployeeRoles).to.have.been.called;
 
 
