@@ -16,11 +16,11 @@
 
             var resolvedList = {};
             list.forEach(function (person) {
-                Object.keys(person.roles).forEach(function (roleName) {
-                    if (!resolvedList[roleName]) {
-                        resolvedList[roleName] = [];
+                person.roles.forEach(function (role) {
+                    if (!resolvedList[role.roleName]) {
+                        resolvedList[role.roleName] = [];
                     }
-                    resolvedList[roleName].push(person);
+                    resolvedList[role.roleName].push(person);
                 })
             })
             return resolvedList;
