@@ -7,6 +7,7 @@
 
     function PeopleDetailsController(peopleService, peopleResolverService, $scope, $stateParams) {
         var vm = this;
+        vm.readonly = true;
         activate();
 
         function activate() {
