@@ -7,6 +7,7 @@ describe('People List Resolver Service', function () {
     beforeEach(module('ui.router'));
     beforeEach(module('people'));
     beforeEach(module('app'));
+    beforeEach(module('templates'));
     beforeEach(inject(function (_peopleListResolverService_, ) {
         peopleListResolverService = _peopleListResolverService_;
     }));

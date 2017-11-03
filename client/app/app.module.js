@@ -5,7 +5,7 @@
         .constant('baseBackendUrl', 'http://127.0.0.1:2403')
         .constant('imgCatalog', 'img')
         .config(['$logProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($logProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/people')
+            $urlRouterProvider.otherwise('/projects')
             $stateProvider
                 .state('peopleList', {
                     url: '/people',

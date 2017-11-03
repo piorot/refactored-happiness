@@ -16,6 +16,7 @@ describe('ProjectsListController', function () {
     beforeEach(module('ui.router'));
     beforeEach(module('people'));
     beforeEach(module('app'));
+    beforeEach(module('templates'));
     beforeEach(inject(function (_$controller_, _projectsService_, _baseBackendUrl_, _peopleListResolverService_, _$rootScope_, _$q_, _$state_) {
         $q = _$q_;
         $state = _$state_;

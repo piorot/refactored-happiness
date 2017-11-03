@@ -1,6 +1,6 @@
 'use strict';
 
-describe('PeopleListController', function () {
+describe.only('PeopleListController', function () {
     var $q;
     var $scope;
     var sandbox;
@@ -15,6 +15,7 @@ describe('PeopleListController', function () {
     beforeEach(module('ui.router'));
     beforeEach(module('people'));
     beforeEach(module('app'));
+    beforeEach(module('templates'));
     beforeEach(inject(function (_$controller_, _peopleService_, _baseBackendUrl_, _peopleListResolverService_, _$rootScope_, _$q_) {
         $controller = _$controller_;
         peopleService = _peopleService_;

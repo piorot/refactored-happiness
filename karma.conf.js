@@ -23,6 +23,7 @@ module.exports = function (config) {
       'app/projects/projects.module.js',
       'app/teams/teams.module.js',
       'app/**/*.js',
+      'app/**/*.html',
 
     ],
 
@@ -32,16 +33,7 @@ module.exports = function (config) {
 
     browsers: ['Chrome'],
 
-    plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-jasmine',
-      'karma-junit-reporter',
-      require('karma-mocha'),
-      require('karma-sinon-chai'),
-      require('karma-coverage')
-
-    ],
+    
 
     junitReporter: {
       outputFile: 'test_out/unit.xml',
@@ -51,8 +43,25 @@ module.exports = function (config) {
     reporters: ['progress', 'coverage'],
     preprocessors: {
 
-      'app/**/!(*.spec).js': ['coverage']
-      
+      'app/**/!(*.spec).js': ['coverage'],
+      'app/**/*.html': ['ng-html2js']
+
+
+    },
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-junit-reporter',
+      'karma-ng-html2js-preprocessor',
+      require('karma-mocha'),
+      require('karma-sinon-chai'),
+      require('karma-coverage')
+
+    ],
+    ngHtml2JsPreprocessor: {
+      stripPrefix: './app/',
+      moduleName: 'templates'
     },
     // optionally, configure the reporter
     coverageReporter: {

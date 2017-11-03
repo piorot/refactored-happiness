@@ -8,6 +8,7 @@ describe('Menu Controller', function () {
 
     beforeEach(module('ui.router'));
     beforeEach(module('menu'));
+    beforeEach(module('templates'));
     beforeEach(inject(function (_$controller_, _$state_) {
         $state = _$state_;
         $controller = _$controller_;
