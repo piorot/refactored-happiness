@@ -1,6 +1,6 @@
 "use strict";
 
-describe("invocation of $http methods", function () {
+describe("projectService invocation of $http methods", function () {
     var $http;
     var sandbox;
     var baseBackendUrl;
@@ -21,14 +21,14 @@ describe("invocation of $http methods", function () {
     });
 
 
-    it("getPtojectList should call get method on $http service", function () {
+    it("getProjectList should call get method on $http service", function () {
         var httpGET = sandbox.stub($http, "get").resolves({ data: { someKey: "someValue" } });
         projectsService.getProjectsList();
         expect(httpGET).to.have.been.calledOnce;
         expect(httpGET).to.have.been.calledWith(baseBackendUrl + "/projects");
     });
 
-    it("getPtojectDetails should call get method on $hhtp service", function () {
+    it("getProjectDetails should call get method on $hhtp service", function () {
         var testProjectId = 123;
         var httpGET = sandbox.stub($http, "get").resolves({ data: { someKey: "someValue" } });
         projectsService.getProjectDetails(testProjectId);
