@@ -3,9 +3,9 @@
     angular.module("projects")
         .controller("ProjectDetailsController", ProjectDetailsController);
 
-    ProjectDetailsController.$inject = ["projectsService", "$stateParams", "$state"];
+    ProjectDetailsController.$inject = ["projectsService", "$stateParams"];
 
-    function ProjectDetailsController(projectsService, $stateParams, $states) {
+    function ProjectDetailsController(projectsService, $stateParams) {
         var vm = this;
         activate();
 
