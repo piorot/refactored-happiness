@@ -73,6 +73,60 @@ describe('People Resolver Service', function () {
 
     })
 
+    describe("resolveEmployeesRoles", function () {
+        it("should return empty array if no roles defined", function () {
+            expect(peopleResolverService.resolveEmployeeRoles(undefined)).to.be.an('array');
+            expect(peopleResolverService.resolveEmployeeRoles(undefined)).to.have.length(0);
+        })
+        it("should resolve to 2 roles when user is developer in two teams", function () {
+            var rolesToResolve = [
+                {
+                    "roleName": "Developer",
+                    "teams": [
+                        "Team California",
+                        "Team Alabama"
+                    ]
+                }
+            ]
+
+            var expectedResolvedRoles = [{ team: "Team California", role: "Developer" }, { team: "Team Alabama", role: "Developer" }];
+
+            var resolvedRoles = peopleResolverService.resolveEmployeeRoles(rolesToResolve);
+            expect(resolvedRoles).to.be.an('array');
+            expect(resolvedRoles).to.have.length(2);
+            expect(resolvedRoles).to.deep.equal(expectedResolvedRoles);
+        })
+        it("should resolve to 3 roles when user is developer in two teams and a manager in yet another one", function () {
+            var rolesToResolve = [
+                {
+                    "roleName": "Developer",
+                    "teams": [
+                        "Team California",
+                        "Team Alabama"
+                    ]
+                },
+                {
+                    "roleName": "Manager",
+                    "teams": [
+                        "Dev Wolves"
+                    ]
+                }
+            ];
+
+            var expectedResolvedRoles = [
+                { team: "Team California", role: "Developer" }
+                , { team: "Team Alabama", role: "Developer" }
+                , { team: "Dev Wolves", role: "Manager" }];
+
+            var resolvedRoles = peopleResolverService.resolveEmployeeRoles(rolesToResolve);
+            expect(resolvedRoles).to.be.an('array');
+            expect(resolvedRoles).to.have.length(3);
+            expect(resolvedRoles).to.deep.equal(expectedResolvedRoles);
+        })
+
+
+
+    })
 
 
 

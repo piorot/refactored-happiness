@@ -27,17 +27,16 @@
         }
 
 
-        function resolveEmployeeRoles(emplayeeRoles) {
-            if (!emplayeeRoles || !emplayeeRoles.length) {
+        function resolveEmployeeRoles(employeeRoles) {
+            if (!employeeRoles || !employeeRoles.length) {
                 return [];
             }
             var roles = [];
-            emplayeeRoles.forEach(function (role) {
+            employeeRoles.forEach(function (role) {
                 role.teams.forEach(function (team) {
                     roles.push({team: team, role: role.roleName })
                 })
             })
-            console.log(roles);
             return roles;
         }
     }
