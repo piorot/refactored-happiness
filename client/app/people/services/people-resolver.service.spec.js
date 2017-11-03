@@ -14,7 +14,7 @@ describe('People Resolver Service', function () {
     describe("resolveList", function () {
         it("should properly handle one-element list with employee having a role in one team", function () {
 
-            var peopleList = [{ firstname: "Piotr", lastname: "Rotyński", roles: { 'developer': ["Team AbcMix"] } }];
+            var peopleList = [{ firstname: "Piotr", lastname: "Rotyński", roles: [{ roleName: 'developer', teams: ["Team AbcMix"] }] }];
             var resolvedPeopleList = peopleResolverService.resolveList(peopleList);
 
             expect(resolvedPeopleList).to.have.property("developer");
@@ -25,7 +25,7 @@ describe('People Resolver Service', function () {
 
         it("should properly handle one-element list with employee having same role in multiple teams", function () {
 
-            var peopleList = [{ firstname: "Piotr", lastname: "Rotyński", roles: { 'developer': ["Team AbcMix", "Team DzikieBuhaje"] } }];
+            var peopleList = [{ firstname: "Piotr", lastname: "Rotyński", roles: [{ roleName: 'developer', teams: ["Team AbcMix", "DzikieBuhaje"] }] }];
             var resolvedPeopleList = peopleResolverService.resolveList(peopleList);
 
             expect(resolvedPeopleList).to.have.property("developer");
@@ -36,7 +36,7 @@ describe('People Resolver Service', function () {
 
         it("should properly handle one-element list with employee having multiple roles", function () {
 
-            var peopleList = [{ firstname: "Piotr", lastname: "Rotyński", roles: { 'developer': ["Team AbcMix", "Team DzikieBuhaje"], 'scrum master': ['Team Pelicans'] } }];
+            var peopleList = [{ firstname: "Piotr", lastname: "Rotyński", roles: [{ roleName: 'developer', teams: ["Team AbcMix"] }, { roleName: "scrum master", teams: ["Team XXX"] }] }];
             var resolvedPeopleList = peopleResolverService.resolveList(peopleList);
 
             expect(resolvedPeopleList).to.have.property("developer");
@@ -52,8 +52,8 @@ describe('People Resolver Service', function () {
         it("should properly handle multiple-element list with employees having multiple roles", function () {
 
             var peopleList = [
-                { firstname: "Piotr", lastname: "Rotyński", roles: { 'developer': ["Team AbcMix", "Team DzikieBuhaje"], 'scrum master': ['Team Pelicans'] } },
-                { firstname: "Piotr", lastname: "Kowalski", roles: { 'developer': ["Team AbcMix", "Team DzikieBuhaje"], 'delivery lead': ['Team TestTeam'] } },
+                { firstname: "Piotr", lastname: "Rotyński", roles: [{ roleName: 'developer', teams: ["Team AbcMix", "Team DzikieBuhaje"] }, { roleName: 'scrum master', teams: ['Team Pelicans'] }] },
+                { firstname: "Piotr", lastname: "Kowalski", roles: [{ roleName: 'developer', teams: ["Team AbcMix", "Team DzikieBuhaje"] }, { roleName: 'delivery lead', teams: ['Team TestTeam'] }] },
             ];
             var resolvedPeopleList = peopleResolverService.resolveList(peopleList);
 
