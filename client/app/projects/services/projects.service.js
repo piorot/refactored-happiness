@@ -21,7 +21,7 @@
         }
 
         function getProjectDetails(id) {
-            return $http.get(baseBackendUrl + "/projects/" + id)
+            return $http.get(baseBackendUrl + "/project/" + id)
                 .then(function (response) {
                     return response.data;
                 })
