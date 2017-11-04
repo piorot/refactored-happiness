@@ -17,7 +17,7 @@
             <div layout="column" layout-gt-sm="row" layout-margin>
                 <div flex="50" layout="column" layout-margin>
                     <span class="md-subhead">Tech skills</span>
-                    <md-slider-container layout="row" layout-margin ng-repeat="techSkill in peopleDetails.person['Skillset']['techskills']">
+                    <md-slider-container layout="row" layout-margin ng-repeat="techSkill in peopleDetails.person['skillset']['techskills']">
                         <span flex="20" class="md-body-1">{{techSkill.name}}</span>
                         <md-slider flex ng-model="techSkill.value" step="5" min="0" max="100" aria-label="rating" ng-disabled="true" md-discrete=""
                             ng-readonly="true"></md-slider>
@@ -25,7 +25,7 @@
                 </div>
                 <div flex="50" layout="column" layout-margin>
                     <span class="md-subhead">Soft skills</span>
-                    <md-slider-container layout="row" layout-margin ng-repeat="softSkill in peopleDetails.person['Skillset']['softskills']">
+                    <md-slider-container layout="row" layout-margin ng-repeat="softSkill in peopleDetails.person['skillset']['softskills']">
                         <span flex="20" class="md-body-1">{{softSkill.name}}</span>
                         <md-slider flex ng-model="softSkill.value" step="5" min="0" max="100" aria-label="rating" ng-disabled="true" md-discrete=""
                             ng-readonly="true"></md-slider>
