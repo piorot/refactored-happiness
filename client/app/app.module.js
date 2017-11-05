@@ -5,7 +5,7 @@
         .constant('baseBackendUrl', 'https://refactored-happiness-api.herokuapp.com')
         .constant('imgCatalog', 'img')
         .config(['$logProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($logProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/projects');
+            $urlRouterProvider.otherwise('/people');
             $stateProvider
                 .state('peopleList', {
                     url: '/people',
