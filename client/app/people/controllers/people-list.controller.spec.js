@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('PeopleListController', function () {
@@ -30,13 +31,11 @@ describe('PeopleListController', function () {
         sandbox = sinon.sandbox.create();
         var getPeopleList = sandbox.stub(peopleService, "getPeopleList").resolves({ data: [] });
 
-        var PeopleListController= $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, $scope: $scope });
+        var PeopleListController = $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, $scope: $scope });
 
         expect(getPeopleList).to.have.been.calledOnce;
         expect(getPeopleList).to.have.been.calledWith();
-
-
-    })
+    });
 
     it("on load should resolve peopleList ", function () {
         sandbox = sinon.sandbox.create();
@@ -46,10 +45,5 @@ describe('PeopleListController', function () {
         var PeopleListController = $controller("PeopleListController", { peopleService: peopleService, baseBackendUrl: baseBackendUrl, peopleListResolverService: peopleResolverService, $scope: $scope, $rootScope: $rootScope });
         $scope.$digest();
         expect(resolvePeopleList).to.have.been.called;
-
-
-
-
-
-    })
+    });
 });

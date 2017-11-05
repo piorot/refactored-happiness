@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 "use strict";
 
 describe("peopleService invocation of $http methods", function () {
@@ -10,7 +11,7 @@ describe("peopleService invocation of $http methods", function () {
     beforeEach(module('templates'));
 
     beforeEach(inject(function (_$http_, _peopleService_, _baseBackendUrl_) {
-        $http = _$http_
+        $http = _$http_;
         baseBackendUrl = _baseBackendUrl_;
         peopleService = _peopleService_;
         sandbox = sinon.sandbox.create();
@@ -35,7 +36,6 @@ describe("peopleService invocation of $http methods", function () {
         expect(httpGET).to.have.been.calledOnce;
         expect(httpGET).to.have.been.calledWith(baseBackendUrl + "/people/" + testEmployeeId);
 
-    })
-
-})
+    });
+});
 

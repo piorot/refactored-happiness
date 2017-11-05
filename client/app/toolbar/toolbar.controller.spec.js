@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('Toolbar Controller', function () {
@@ -12,17 +13,14 @@ describe('Toolbar Controller', function () {
     }));
 
 
-    it("should toggle side navigation when toggleMenu called", function() {
+    it("should toggle side navigation when toggleMenu called", function () {
         var sandbox = sinon.sandbox.create();
         var toggleMenu = sandbox.stub();
         var sidenavMock = function () {
-            return { toggle: toggleMenu }
-        }
+            return { toggle: toggleMenu };
+        };
         var toolbarController = $controller('ToolbarController', { $mdSidenav: sidenavMock });
-        toolbarController.toggleMenu()
+        toolbarController.toggleMenu();
         expect(toggleMenu).to.have.been.calledOnce;
-
-
     });
-
 });

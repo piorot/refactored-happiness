@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 "use strict";
 
 describe("projectService invocation of $http methods", function () {
@@ -10,7 +11,7 @@ describe("projectService invocation of $http methods", function () {
     beforeEach(module('templates'));
 
     beforeEach(inject(function (_$http_, _projectsService_, _baseBackendUrl_) {
-        $http = _$http_
+        $http = _$http_;
         baseBackendUrl = _baseBackendUrl_;
         projectsService = _projectsService_;
         sandbox = sinon.sandbox.create();
@@ -34,8 +35,7 @@ describe("projectService invocation of $http methods", function () {
         projectsService.getProjectDetails(testProjectId);
         expect(httpGET).to.have.been.calledOnce;
         expect(httpGET).to.have.been.calledWith(baseBackendUrl + "/projects/" + testProjectId);
+    });
 
-    })
-
-})
+});
 

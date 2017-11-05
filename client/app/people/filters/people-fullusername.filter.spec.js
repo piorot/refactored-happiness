@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('fullusername Filter', function () {
@@ -12,23 +13,20 @@ describe('fullusername Filter', function () {
 
     describe("should return empty string if is not invoked properly", function () {
         it("should return empty string when person is undefined", function () {
-            var result = fullusernameFilter(undefined)
+            var result = fullusernameFilter(undefined);
             expect(result).to.equal("");
-
         });
+
         it("should return empty string when lastname is not defined", function () {
-            var result = fullusernameFilter({firstname : "Piotr"})
+            var result = fullusernameFilter({ firstname: "Piotr" });
             expect(result).to.equal("");
+        });
 
-        })
         it("should return empty string when firstname is not defined", function () {
-            var result = fullusernameFilter({lastname : "Rotyński"})
+            var result = fullusernameFilter({ lastname: "Rotyński" });
             expect(result).to.equal("");
-
-        })
-        
-
-    })
+        });
+    });
 
 
     describe("should return properly build full username when properly invoked", function () {
@@ -40,12 +38,8 @@ describe('fullusername Filter', function () {
         };
 
         it("should return empty string when firstname is not defined", function () {
-            var result = fullusernameFilter(testObject)
+            var result = fullusernameFilter(testObject);
             expect(result).to.equal("Piotr Rotyński");
-
-        })
-
-
-    })
-
+        });
+    });
 });

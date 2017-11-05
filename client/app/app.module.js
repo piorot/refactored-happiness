@@ -5,7 +5,7 @@
         .constant('baseBackendUrl', 'https://refactored-happiness-api.herokuapp.com')
         .constant('imgCatalog', 'img')
         .config(['$logProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($logProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/projects')
+            $urlRouterProvider.otherwise('/projects');
             $stateProvider
                 .state('peopleList', {
                     url: '/people',
@@ -14,12 +14,10 @@
                     controllerAs: 'peopleList'
                 })
                 .state('peopleDetails', {
-                    url: '/people/:id',
+                    'url': '/people/:id',
                     templateUrl: '/app/people/templates/people-details.template.html',
                     controller: 'PeopleDetailsController',
-                    controllerAs: 'peopleDetails',
-                    
-                    
+                    controllerAs: 'peopleDetails'
                 })
                 .state('teams', {
                     url: '/teams',
@@ -42,7 +40,8 @@
 
             $locationProvider.hashPrefix('');
 
-        }])
+        }]);
+        
 
 
 })();

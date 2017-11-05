@@ -11,7 +11,7 @@
         vm.changeState = changeState;
               
         function changeState(targetState){
-            $state.go(targetState)
+            $state.go(targetState);
         }       
 
     }

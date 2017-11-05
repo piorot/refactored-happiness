@@ -1,7 +1,7 @@
 (function () {
+    "use strict";
     angular.module("people")
-        .filter('fullusername', fullusername)
-
+        .filter('fullusername', fullusername);
 
     function fullusername() {
 
@@ -9,7 +9,7 @@
             if (!person || !person.firstname || !person.lastname) {
                 return '';
             }
-            return `${person.firstname} ${person.lastname}`
-        }
+            return `${person.firstname} ${person.lastname}`;
+        };
     }
 })();

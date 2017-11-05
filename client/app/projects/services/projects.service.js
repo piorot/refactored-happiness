@@ -10,21 +10,21 @@
         return {
             getProjectsList: getProjectsList,
             getProjectDetails: getProjectDetails
-        }
+        };
 
 
         function getProjectsList () {
             return $http.get(baseBackendUrl + "/projects")
                 .then(function (response) {
                     return response.data;
-                })
+                });
         }
 
         function getProjectDetails(id) {
             return $http.get(baseBackendUrl + "/projects/" + id)
                 .then(function (response) {
                     return response.data;
-                })
+                });
         }
     }
 

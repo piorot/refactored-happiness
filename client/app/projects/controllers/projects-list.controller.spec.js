@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('ProjectsListController', function () {
@@ -36,7 +37,7 @@ describe('ProjectsListController', function () {
 
         expect(getProjectsList).to.have.been.calledOnce;
         expect(getProjectsList).to.have.been.calledWith();
-    })
+    });
 
     it("should change state to projectsDetails when called showProjectDetails", function() {
         var ProjectsListController = $controller('ProjectsListController', { $state: $state });
@@ -47,8 +48,7 @@ describe('ProjectsListController', function () {
         ProjectsListController.showProjectDetails(dummyProjectMock);
         expect(stateGo).to.have.been.calledOnce;
         expect(stateGo).to.have.been.calledWith('projectsDetails', {id : dummyProjectMock.id});
-
-    })
+    });
 
    
 });

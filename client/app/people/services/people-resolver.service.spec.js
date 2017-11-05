@@ -1,14 +1,14 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('People Resolver Service', function () {
     var peopleResolverService;
 
-
     beforeEach(module('ui.router'));
     beforeEach(module('people'));
     beforeEach(module('app'));
     beforeEach(module('templates'));
-    beforeEach(inject(function (_peopleResolverService_, ) {
+    beforeEach(inject(function (_peopleResolverService_) {
         peopleResolverService = _peopleResolverService_;
     }));
     describe("resolveList", function () {
@@ -32,7 +32,7 @@ describe('People Resolver Service', function () {
             expect(resolvedPeopleList.developer).to.be.an('array');
             expect(resolvedPeopleList.developer.length).to.equal(1);
 
-        })
+        });
 
         it("should properly handle one-element list with employee having multiple roles", function () {
 
@@ -47,7 +47,7 @@ describe('People Resolver Service', function () {
             expect(resolvedPeopleList["scrum master"]).to.be.an('array');
             expect(resolvedPeopleList["scrum master"].length).to.equal(1);
 
-        })
+        });
 
         it("should properly handle multiple-element list with employees having multiple roles", function () {
 
@@ -69,15 +69,16 @@ describe('People Resolver Service', function () {
             expect(resolvedPeopleList["delivery lead"]).to.be.an('array');
             expect(resolvedPeopleList["delivery lead"].length).to.equal(1);
 
-        })
+        });
 
-    })
+    });
 
     describe("resolveEmployeesRoles", function () {
         it("should return empty array if no roles defined", function () {
             expect(peopleResolverService.resolveEmployeeRoles(undefined)).to.be.an('array');
             expect(peopleResolverService.resolveEmployeeRoles(undefined)).to.have.length(0);
-        })
+        });
+
         it("should resolve to 2 roles when user is developer in two teams", function () {
             var rolesToResolve = [
                 {
@@ -87,7 +88,7 @@ describe('People Resolver Service', function () {
                         "Team Alabama"
                     ]
                 }
-            ]
+            ];
 
             var expectedResolvedRoles = [{ team: "Team California", role: "Developer" }, { team: "Team Alabama", role: "Developer" }];
 
@@ -95,7 +96,7 @@ describe('People Resolver Service', function () {
             expect(resolvedRoles).to.be.an('array');
             expect(resolvedRoles).to.have.length(2);
             expect(resolvedRoles).to.deep.equal(expectedResolvedRoles);
-        })
+        });
         it("should resolve to 3 roles when user is developer in two teams and a manager in yet another one", function () {
             var rolesToResolve = [
                 {
@@ -122,11 +123,11 @@ describe('People Resolver Service', function () {
             expect(resolvedRoles).to.be.an('array');
             expect(resolvedRoles).to.have.length(3);
             expect(resolvedRoles).to.deep.equal(expectedResolvedRoles);
-        })
+        });
 
 
 
-    })
+    });
 
 
 

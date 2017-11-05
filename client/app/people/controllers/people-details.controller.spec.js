@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('PeopleDetailsController', function () {
@@ -8,7 +9,7 @@ describe('PeopleDetailsController', function () {
     var $controller;
     var peopleService;
     var peopleResolverService;
-    
+
     beforeEach(module('ui.router'));
     beforeEach(module('people'));
     beforeEach(module('app'));
@@ -25,30 +26,23 @@ describe('PeopleDetailsController', function () {
     it("on load should download employee details", function () {
         sandbox = sinon.sandbox.create();
         var getEmployeeDetails = sandbox.stub(peopleService, "getEmployeeDetails").resolves({ data: {} });
-        var $fakeStateParams = {id : 1};
+        var $fakeStateParams = { id: 1 };
         var PeopleDetailsController = $controller("PeopleDetailsController", { peopleService: peopleService, $scope: $scope, $stateParams: $fakeStateParams });
 
         expect(getEmployeeDetails).to.have.been.calledOnce;
         expect(getEmployeeDetails).to.have.been.calledWith($fakeStateParams.id);
-
-
-    })
+    });
 
     it("on load should resolve employee roles ", function () {
         sandbox = sinon.sandbox.create();
-        var employeeDetails = { id : 1, roles : [{roleName : "Office Assistant", teams : ["Team 1"]}]};
+        var employeeDetails = { id: 1, roles: [{ roleName: "Office Assistant", teams: ["Team 1"] }] };
         var getEmployeeDetails = sandbox.stub(peopleService, "getEmployeeDetails").returns($q.when(employeeDetails));
-        var $fakeStateParams = {id : 1};
+        var $fakeStateParams = { id: 1 };
         var PeopleDetailsController = $controller("PeopleDetailsController", { peopleService: peopleService, $scope: $scope, $stateParams: $fakeStateParams });
-        
+
         var resolveEmployeeRoles = sandbox.stub(peopleResolverService, "resolveEmployeeRoles").returns();
 
         $scope.$digest();
         expect(resolveEmployeeRoles).to.have.been.called;
-
-
-
-
-
-    })
+    });
 });

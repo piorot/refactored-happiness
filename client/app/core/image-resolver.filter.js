@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     angular.module("app")
         .filter('imageResolver', imageResolver);
         
@@ -7,15 +8,15 @@
     function imageResolver(imgCatalog) {
         return function (obj, imageProperty) {
             if(!obj || !imageProperty)            
-                return ""
+                return "";
             if (imageProperty === 'avatar')
-                return obj.avatar ? imgCatalog + "/" + obj.avatar : imgCatalog + "/test-avatars/default-avatar.png"
+                return obj.avatar ? imgCatalog + "/" + obj.avatar : imgCatalog + "/test-avatars/default-avatar.png";
             else if (imageProperty === 'splashScreen')
-                return obj.splashScreen ? imgCatalog + "/" + obj.splashScreen : imgCatalog + "/projects/splashes/default-splash.png"
+                return obj.splashScreen ? imgCatalog + "/" + obj.splashScreen : imgCatalog + "/projects/splashes/default-splash.png";
             else if (imageProperty === 'icon')
-                return obj.icon ? imgCatalog + "/" + obj.icon :  imgCatalog + "/projects/icons/logo.svg"
+                return obj.icon ? imgCatalog + "/" + obj.icon :  imgCatalog + "/projects/icons/logo.svg";
             else
                 return "";    
-        }
+        };
     }
 })();

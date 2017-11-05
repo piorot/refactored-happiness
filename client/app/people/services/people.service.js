@@ -11,7 +11,7 @@
                     return $http.get(baseBackendUrl + "/people")
                         .then(function (response) {
                             return response.data;
-                        })
+                        });
                        
                 },
 
@@ -19,9 +19,9 @@
                     return $http.get(baseBackendUrl + "/people/" +id)
                     .then(function (response) {
                         return response.data;
-                    })
+                    });
                 }
-            }
+            };
 
         }
 })();

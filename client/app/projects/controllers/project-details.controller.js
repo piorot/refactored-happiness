@@ -1,5 +1,5 @@
 (function () {
-    "angular strict";
+    "use strict";
     angular.module("projects")
         .controller("ProjectDetailsController", ProjectDetailsController);
 
@@ -13,7 +13,7 @@
             projectsService.getProjectDetails($stateParams.id)
                 .then(function (projectDetails) {
                     vm.project = projectDetails;
-                })
+                });
         }
 
 

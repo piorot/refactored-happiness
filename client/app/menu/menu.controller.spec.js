@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 describe('Menu Controller', function () {
@@ -18,9 +19,9 @@ describe('Menu Controller', function () {
         var menuController = $controller('MenuController', { $state: $state });
         var sandbox = sinon.sandbox.create();
         var stateGo = sandbox.stub($state, "go");
-        menuController.changeState('testTargetState')
+        menuController.changeState('testTargetState');
 
         expect(stateGo).to.have.been.calledOnce;
 
-    })
+    });
 });

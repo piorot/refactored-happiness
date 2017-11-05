@@ -8,7 +8,7 @@
 
     function ProjectsListController($state, projectsService) {
         var vm = this;
-        vm.showProjectDetails = showProjectDetails
+        vm.showProjectDetails = showProjectDetails;
         vm.list;
 
         activate();
@@ -17,11 +17,11 @@
             projectsService.getProjectsList()
             .then(function(projectsList){
                 vm.list = projectsList;
-            })
+            });
         }
 
         function showProjectDetails(project){
-            $state.go("projectsDetails", {id : project.id})
+            $state.go("projectsDetails", {id : project.id});
         }
 
 

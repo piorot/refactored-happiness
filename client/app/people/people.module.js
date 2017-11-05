@@ -1,4 +1,5 @@
 (function () {
-    angular.module("people", [])
+    "use strict";
+    angular.module("people", []);
 
 })();

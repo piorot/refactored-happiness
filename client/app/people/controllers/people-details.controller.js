@@ -1,7 +1,8 @@
 (function () {
+    "use strict";
     angular
         .module("people")
-        .controller('PeopleDetailsController', PeopleDetailsController)
+        .controller('PeopleDetailsController', PeopleDetailsController);
 
     PeopleDetailsController.$inject = ['peopleService', 'peopleResolverService', '$scope', '$stateParams'];
 
@@ -16,7 +17,7 @@
                 .then(function (personDetails) {
                     vm.person = personDetails;
                     vm.person.roles = peopleResolverService.resolveEmployeeRoles(personDetails.roles);
-                })
+                });
         }
 
 

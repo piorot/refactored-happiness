@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("people")
-        .factory("peopleResolverService", peopleResolverService)
+        .factory("peopleResolverService", peopleResolverService);
 
     peopleResolverService.$inject = [];
 
@@ -10,7 +10,7 @@
         return {
             resolveList: resolveList,
             resolveEmployeeRoles: resolveEmployeeRoles
-        }
+        };
 
         function resolveList(list) {
 
@@ -21,8 +21,8 @@
                         resolvedList[role.roleName] = [];
                     }
                     resolvedList[role.roleName].push(person);
-                })
-            })
+                });
+            });
             return resolvedList;
         }
 
@@ -34,9 +34,9 @@
             var roles = [];
             employeeRoles.forEach(function (role) {
                 role.teams.forEach(function (team) {
-                    roles.push({team: team, role: role.roleName })
-                })
-            })
+                    roles.push({team: team, role: role.roleName });
+                });
+            });
             return roles;
         }
     }
