@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular
-        .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu', 'people', 'projects', 'teams'])
+        .module('app', ['ngMaterial', 'ui.router', 'toolbar', 'menu', 'people', 'projects'])
         .constant('baseBackendUrl', 'https://refactored-happiness-api.herokuapp.com')
         .constant('imgCatalog', 'img')
         .config(['$logProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($logProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
