@@ -1,4 +1,7 @@
 <section>
+    <div layout="row" layout-margin layout-align="space-around" ng-if="!projectDetails.project">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
     <md-card class="slightMargin">
         <md-card-header>
             <md-card-avatar>

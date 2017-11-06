@@ -1,3 +1,6 @@
+<div layout="row" layout-margin layout-align="space-around" ng-if="!peopleList.resolvedPeopleList">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
 <div class="slightMargin">
     <section class="md-whiteframe-z1">
         <md-list class="listdemoListControls"></md-listclass>
@@ -5,9 +8,7 @@
                 <span class="md-title">Employees Overview</span>
             </md-subheader>
             <md-divider></md-divider>
-            <div layout="row" layout-align="space-around" ng-if="!peopleList.resolvedPeopleList">
-                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-            </div>
+
             <span ng-repeat="(role, people) in peopleList.resolvedPeopleList" ng-if="peopleList.resolvedPeopleList">
                 <md-subheader>{{role}}</md-subheader>
                 <md-list-item ng-repeat="person in people" ng-click="peopleList.goToPerson(person)" class="noright">
