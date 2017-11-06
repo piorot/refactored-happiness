@@ -29,8 +29,8 @@ Project is supposed to be an initial phase of stuff manager app. For now there a
 * Continous deployment with use of heroku deployment pipeline on TravisCI
 * Wannabe Responsive layout thanks to angular-material usage
 
-![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-18-55-19.png)
-![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-18-54-41.png)
+    ![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-18-55-19.png)
+    ![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-18-54-41.png)
     
 ### Guidelines (partially) followed [Angular Patterns: Clean Code](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
     
