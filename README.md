@@ -15,6 +15,9 @@ Project is supposed to be an initial phase of stuff manager app. For now there a
 * Projects list view - list of whole projects in company with splash screen and one sentance description 
 * Project details view - detail view of single project with all teams involved in work on the project 
 
+Default Employees List View | Detail single employee card | Projects List View | Detail single project card
+----------------------------|-----------------------------|--------------------|---------------------------
+![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-18-55-19.png)|![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-20-20-51.png)|![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-18-54-41.png)|![Responsiveness](https://github.com/piorot/refactored-happiness/blob/master/readme/Screenshot_2017-11-06-20-21-55.png)
 
 ### Project goal
 * [To show unit tests](https://coveralls.io/github/piorot/refactored-happiness)
