@@ -14,7 +14,7 @@
             else if (imageProperty === 'splashScreen')
                 return obj.splashScreen ? imgCatalog + "/" + obj.splashScreen : imgCatalog + "/projects/splashes/default-splash.png";
             else if (imageProperty === 'icon')
-                return obj.icon ? imgCatalog + "/" + obj.icon :  imgCatalog + "/projects/icons/logo.svg";
+                return obj.icon ? imgCatalog + "/" + obj.icon :  imgCatalog + "/projects/icons/star.svg";
             else
                 return "";    
         };
