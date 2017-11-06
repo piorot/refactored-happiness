@@ -1,6 +1,8 @@
 <section class="md-padding" layout-xs="column" layout="row">
-
-    <div flex-gt-xs="50" layout="column">
+    <div flex layout="row" layout-margin layout-align="space-around" ng-if="!projectsList.list">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <div flex-gt-xs="50" layout="column" ng-if="projectsList.list">
         <div ng-repeat="project in projectsList.list" ng-if="$even">
             <md-card>
                 <md-card-header>
@@ -30,7 +32,7 @@
             </md-card>
         </div>
     </div>
-    <div flex-gt-xs="50" layout="column">
+    <div flex-gt-xs="50" layout="column" ng-if="projectsList.list">
         <div ng-repeat="project in projectsList.list" ng-if="$odd">
 
             <md-card>
