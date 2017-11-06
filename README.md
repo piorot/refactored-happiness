@@ -5,7 +5,7 @@ Very simple front-end project made in Angular 1.6.6.
 [![Coverage Status](https://coveralls.io/repos/github/piorot/refactored-happiness/badge.svg)](https://coveralls.io/github/piorot/refactored-happiness)
 
 ### Live demo
-(heroku free plan cons may be visible): 
+(heroku free plan wake-up delay may be experineced with first request): 
 https://refactored-happiness.herokuapp.com/
 
 ### Project description
